@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="armeabi-v7a,armeabi"
+    api-level="19"
+    density="xhdpi"
+    format="8"
+    plugin-version="2.2.3"
+    timestamp="1645348178274388"
+    token="7672393376921668739"
+    verifier="FULL_BUILD_REQUESTED" >
+
+    <task
+        name="javac"
+        duration="2272" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="1810" />
+    <task
+        name="verifier"
+        duration="440" />
+
+    <artifact
+        location="C:\E503709\Personal\Weather_Hybrid\Provider(Android)\app\build\outputs\apk\app-debug.apk"
+        type="MAIN" />
+
+    <build
+        timestamp="1645348178274388"
+        verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="C:\E503709\Personal\Weather_Hybrid\Provider(Android)\app\build\outputs\apk\app-debug.apk"
+            type="MAIN" />
+    </build>
+
+</instant-run>

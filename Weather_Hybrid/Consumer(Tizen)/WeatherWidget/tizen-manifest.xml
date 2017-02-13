@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<manifest xmlns="http://tizen.org/ns/packages" api-version="2.3.1" package="org.example.WeatherWidget" version="1.0.0">
+    <profile name="wearable"/>
+    <widget-application appid="org.example.WeatherWidget" exec="weatherwidget" main="true" update-period="0">
+        <label>WeatherWidget</label>
+        <icon>icon.png</icon>
+        <support-size preview="preview.png">2x2</support-size>
+        <metadata key="accessory-services-location" value="/res/xml/accessoryservices.xml"/>
+        <metadata key="launch-on-attach" value="false"/>
+    </widget-application>
+    <privileges>
+        <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+        <privilege>http://developer.samsung.com/tizen/privilege/accessoryprotocol</privilege>
+    </privileges>
+</manifest>
