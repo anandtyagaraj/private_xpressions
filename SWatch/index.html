@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="description" content="XpressionMilitary" />
+
+<title>XpressionMilitary</title>
+
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+</head>
+<body >
+	<div id="box">
+	<img id ="imgWeatherIcon" style="position: absolute;visibility: hidden; top: 62%; left: 24%; width: 12%;"
+			alt="" src="icons\noweather.png">
+	<img id ="imgConnection" style="position: absolute;visibility: visible; top: 48%; left: 80%; width: 10%;"
+			alt="" src="icons\disconnected.png">
+	
+	<!-- <img id="imgPlay"
+			style="position: absolute; top: 0%; left: 10%; width: 80%;height: 30%"
+			onclick="changePlay()"  alt="" src="transparent.png"> -->
+	
+		<img id="imgtransparent"
+			style="position: absolute; top: 40%; left: 30%; width: 50%;height: 20%"
+			onclick="showMenu()"  alt="" src="transparent.png"> 
+			
+			<img
+			id="imgHrHist"
+			style="position: absolute; top: 65%; left: 68%; width: 5%; visibility: hidden;"
+			alt="" src="hr.png"> 
+			
+			<img id="imgHr"
+			style="position: absolute; top: 59%; left: 47%; visibility: hidden;"
+			alt="" src="hr.png"> 
+			
+			<!-- <img id="imgPedo"
+			style="position: absolute; top: 65%; left: 25%;width:15%; visibility: hidden;"
+			alt="" src="steps.png"> -->
+		<!-- <img style="position:absolute;top:60%;left:55%;width: 20%;" onclick="changeColor()" alt="" src="photon2.png"> -->
+		<canvas class="canvas"></canvas>
+		<div id="menu" style="visibility: hidden;">
+			<!-- <img id="img1"
+				style="position: absolute; top: 10%; left: 55%; width: 20%; background-color: #999999; border-radius: 10px;"
+				onclick="changeColor()" alt="" src="photon2.png"> --> 
+				
+				<!-- <img
+				id="img2"
+				style="position: absolute; top: 32%; left: 70%; width: 20%; background-color: #999999; border-radius: 10px;"
+				onclick="swapTimeFormat()" alt="" src="12_24.png"> --> 
+				
+				<!-- <img
+				id="img5"
+				style="position: absolute; top: 52%; left: 70%; width: 20%; background-color: #999999; border-radius: 10px;"
+				onclick="changeBGImage()" alt="" src="change_image.png"> -->
+				
+				<img
+				id="img4"
+				style="position: absolute;  top: 32%; left: 10%; width: 20%; background-color: #999999; border-radius: 10px;"
+				onclick="calculateHeartRate()" alt="" src="hrmenu.png"> 
+				
+				<img
+				id="imgMobileConnect"
+				style="position: absolute;  top: 52%; left: 10%; width: 20%;height: 20%; background-color: #999999; border-radius: 10px;"
+				onclick="reconnect()" alt="" src="reconnect.png"> 
+				
+				
+				<!-- <img id="imgTemp"
+				style="position: absolute; top: 10%; left: 25%; width: 20%; background-color: #999999; border-radius: 10px;"
+				onclick="changeTempUnit()" alt="" src="tempunit.png">
+				
+				<img id="imgPlay"
+				style="position: absolute;top: 73%; left: 55%; width: 18%; background-color: #999999; border-radius: 10px;"
+				onclick="changePlay()" alt="" src="play_menu.png">			 
+				
+				<img id="imgWeatherRefresh"
+				style="position: absolute; top: 72%; left: 25%; width: 20%; background-color: #999999; border-radius: 10px;"
+				onclick="refreshWeather()" alt="" src="weatherref.png"> -->
+		</div>
+	</div>
+	<script src="language.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/marinemain.js"></script>
+
+</body>
