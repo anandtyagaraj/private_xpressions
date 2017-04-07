@@ -1412,7 +1412,8 @@ window.onload = function() {
 		
 		var colorBGValue = localStorage.getItem(savedBGColorSelectionKey);
         if (colorBGValue != null) {
-            canvas.style.background = '-webkit-radial-gradient(' + colorBGValue + ' 30%, black 70%)';        	
+            //canvas.style.background = '-webkit-radial-gradient(' + colorBGValue + ' 30%, black 70%)';
+        	canvas.style.background = "#000000";
             console.log("Color saved is:" + colorBGValue);
         } else {
             console.log("Color NOT saved");

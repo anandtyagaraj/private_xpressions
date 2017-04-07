@@ -155,7 +155,13 @@ function onreceive(channelId, data) {
 		if(obj != null){
 			
 			if(obj.command != null){
-				switch(obj.command){
+				switch(obj.command){		
+				
+				
+				case "12":swapTimeFormat("0");break;
+				case "24":swapTimeFormat("1");break;
+				case "C":changeTempUnit(0); break;
+				case "F":changeTempUnit(1); break;
 				case "TEXT_COLOR":changeColor(); break;
 				case "BACK_COLOR":changeBGImage(); break;
 				case "12/24":swapTimeFormat(); break;
@@ -164,6 +170,10 @@ function onreceive(channelId, data) {
 				case "HR":calculateHeartRate(); break;
 				
 				}
+			}
+			else if(obj.temperatureId == undefined){
+				//steps = obj.steps;
+				//calories = obj.calories;
 			}
 			else{
 				temperatureId = obj.temperatureId;
@@ -567,6 +577,9 @@ function setBGImage() {
         colorBg = "#793926";
     }
 
+    if(playId < 1)
+    	canvas.style.background = colorBg;
+    else   	
     canvas.style.background = '-webkit-radial-gradient(' + colorBg + ' 30%, black 70%)';
     //canvas.style.background = colorBg;
     saveBGColorStorage(colorBg);
@@ -580,6 +593,10 @@ function changeTempUnit() {
 		tempUnit = 1;
 	else
 		tempUnit = 0;
+}
+
+function changeTempUnit(unit) {
+	tempUnit = unit;
 }
 
 function changePlay() {
@@ -597,6 +614,8 @@ function changePlay() {
 		document.getElementById('imgHrHist').style.visibility = 'visible';
 		
 	}
+	
+	setBGImage();
 	
 	showMenu();
 	showMenu();
@@ -922,6 +941,7 @@ function renderDigitalTime(hour, minute, day, dateOfMonth, month, seconds) {
 		if (playId === 0) {
 			renderShowDigitalTime(hour, minute, seconds, ampm);
 
+			
 			return;
 		} else if (playId === 1) {
 			renderShowDigitalTime(hour, minute, seconds, ampm);
@@ -931,6 +951,8 @@ function renderDigitalTime(hour, minute, day, dateOfMonth, month, seconds) {
 			showBrand();
 
 			renderShowAdvanced();
+			
+			
 			return;
 		} 
 		
@@ -1024,7 +1046,7 @@ function watch() {
 
 		// console.log("fetchAtleastOnce :" + fetchAtleastOnce);
 		if (minutes === 0 && seconds < 1) {
-
+			fetchAtleastOnce = 1;
 			fetch();
 		} else if (fetchAtleastOnce < 1) {
 			fetchAtleastOnce = 1;
@@ -1064,6 +1086,12 @@ function swapTimeFormat() {
 	} else if (timeformat === "1") {
 		timeformat = "0"; // 12 hr
 	}
+}
+
+function swapTimeFormat(format) {
+	
+	timeformat = format; // 12 hr
+
 }
 
 function onchangedCB(hrmInfo) {
