@@ -1,0 +1,30 @@
+// Draw the face1
+context.beginPath();
+context.fillStyle = "red";
+context.arc(95, 85, 80, 1.5*Math.PI, .5*Math.PI, true);
+context.fill();
+context.closePath();
+
+
+//Face 2:
+context.beginPath();
+      context.beginPath();
+      context.moveTo(120, 5);
+      context.lineTo(120, 165);
+      context.lineWidth = 15;
+
+      // set line color
+      context.strokeStyle = '#ff0000';
+      context.stroke();
+context.closePath();
+
+context.beginPath();
+      context.beginPath();
+      context.moveTo(145, 18);
+      context.lineTo(145, 153);
+      context.lineWidth = 5;
+
+      // set line color
+      context.strokeStyle = '#ff0000';
+      context.stroke();
+context.closePath();
