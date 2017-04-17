@@ -6,7 +6,7 @@
     <content src="index.html"/>
     <feature name="http://tizen.org/feature/screen.size.all"/>
     <feature name="http://developer.samsung.com/tizen/feature/network.accessory_protocol"/>
-    <icon src="Gear_WatchFace_Xpressions_eng.jpg" height="117" width="117"/>
+    <icon src="360.png" height="117" width="117"/>
     <tizen:metadata key="AccessoryServicesLocation" value="res/xml/accessoryservices.xml"/>
     <name>Xpressions Sportive</name>
     <tizen:privilege name="http://developer.samsung.com/privilege/accessoryprotocol"/>

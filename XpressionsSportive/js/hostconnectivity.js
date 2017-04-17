@@ -146,9 +146,9 @@ function onreceive(channelId, data) {
 				switch(obj.command){
 				case "TEXT_COLOR":changeColor(); break;
 				case "BACK_COLOR":changeBGImage(); break;
-				//case "12/24":swapTimeFormat(); break;
-				//case "12":swapTimeFormat("0");break;
-				//case "24":swapTimeFormat("1");break;
+				case "12/24":toggleTimeFormat(); break;
+				case "12":toggleTimeFormat(0);break;
+				case "24":toggleTimeFormat(1);break;
 				//case "C/F":changeTempUnit(); break;
 				//case "C":changeTempUnit(0); break;
 				//case "F":changeTempUnit(1); break;

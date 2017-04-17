@@ -1,7 +1,7 @@
 /*global window, document, tizen, console, setTimeout */
 /*jslint plusplus: true*/
 
-var canvas, context, clockRadiusX, clockRadiusY, battery, timeformat, colorIndex = 1, colorSec = "#28ABE1", bgIndex = 0, savedColorSelectionKey = "ColorSelectionKey", savedBGColorSelectionKey = "BGColorSelectionKey", steps, calories, windSpeed, windDeg, fetchAtleastOnce = 0, lastFetch = 0, resetDate = 0, lastReset = 0, playId = 1;
+var canvas, context, clockRadiusX, clockRadiusY, battery, itimeformat, colorIndex = 1, colorSec = "#ce5a57", bgIndex = 0, savedColorSelectionKey = "ColorSelectionKey", savedBGColorSelectionKey = "BGColorSelectionKey", steps = 0, calories = 0, windSpeed, windDeg, fetchAtleastOnce = 0, lastFetch = 0, resetDate = 0, lastReset = 0, playId = 1, theme = 0;
 
 window.requestAnimationFrame = window.requestAnimationFrame
 		|| window.webkitRequestAnimationFrame
@@ -10,719 +10,6 @@ window.requestAnimationFrame = window.requestAnimationFrame
 			'use strict';
 			window.setTimeout(callback, 1000 / 60);
 		};
-
-
-function renderDots(seconds) {
-	'use strict';
-
-	var dx = 0, dy = 0, i = 1, angle = null, angle1 = null, angle2 = null;
-	var dx1 = 0, dy1 = 0, dx2 = 0, dy2 = 0, dx3 = 0, dy3 = 0;
-
-	context.save();
-
-	// Assigns the clock creation location in the middle of the canvas
-	context.translate(canvas.width / 2, canvas.height / 2);
-
-	if (playId === 1) {
-		// Assign the style of the number which will be applied to the clock
-		// plate
-		context.beginPath();
-
-		context.fillStyle = colorSec; // '#009AC9';
-
-		// Create 12 dots in a circle
-		for (i = 1; i <= 60; i++) {
-			angle = (i - 15) * (Math.PI * 2) / 60;
-			// angle1 = (i + 0.02 - 3) * (Math.PI * 2) / 60;
-			// angle2 = (i - 0.02 - 3) * (Math.PI * 2) / 12;
-
-			dx = clockRadiusX * 0.9 * Math.cos(angle);
-			dy = clockRadiusY * 0.9 * Math.sin(angle);
-
-			dx1 = clockRadiusX * 1 * Math.cos(angle);
-			dy1 = clockRadiusY * 1 * Math.sin(angle);
-
-			dx2 = clockRadiusX * 0.8 * Math.cos(angle);
-			dy2 = clockRadiusY * 0.8 * Math.sin(angle);
-			//
-			dx3 = clockRadiusX * 0.95 * Math.cos(angle);
-			dy3 = clockRadiusY * 0.95 * Math.sin(angle);
-
-			// context.arc(dx, dy, 3, 0, 2 * Math.PI, false);
-			if (i % 5 === 0) {
-
-				context.textAlign = 'center';
-				context.textBaseline = 'middle';
-				context.font = '20px serif';
-			} else {
-				context.font = '20px serif';
-				context.textAlign = 'center';
-				context.textBaseline = 'middle';
-			}
-			if (i % 5 === 0) {
-
-				if (i === 60)
-					context.fillStyle = colorSec;
-				else if (i === 15 || i == 30 || i == 45)
-					context.fillStyle = "#D6D7D6";
-				else
-					context.fillStyle = "#222222";
-
-				context.beginPath();
-				context.font = '400 20px sans-serif';
-				context.strokeStyle = "#D6D7D6";// colorSec; // "#30CE7A";
-				//context.fillText(i, dx, dy);
-				context.lineWidth = 2;
-				context.lineJoin = "round";
-				context.moveTo(dx1, dy1);
-				context.lineTo(dx3, dy3);
-
-				context.stroke();
-
-				if (i === 15 || i === 40 || i === 45) {
-					// dont print
-				} else {
-					//context.fillText(i / 5, dx2, dy2);
-				}
-
-			} else {
-				// console.log("i = " + i + " seconds = " + seconds);
-				if (i <= seconds) {
-					context.strokeStyle = colorSec;
-				} else {
-					context.strokeStyle = "#444444";
-				}
-
-				context.beginPath();
-				context.font = '400 20px sans-serif';
-				// context.strokeStyle = "#666666";// colorSec; // "#30CE7A";
-				// context.fillText(i, dx, dy);
-				context.lineWidth = 2;
-				context.lineJoin = "round";
-				context.moveTo(dx1, dy1);
-				context.lineTo(dx3, dy3);
-
-				context.stroke();
-			}
-
-			// }
-			context.fill();
-		}
-		context.closePath();
-	}
-		// brand
-
-	// context.beginPath();
-	//
-	// context.fillStyle = "#999999";
-	// context.textAlign = 'center';
-	// context.textBaseline = 'middle';
-	// context.font = '15px italic monospace';
-	//
-	// context.fillText("Xpressions", -(canvas.width / 2) * (0.5),
-	// (canvas.height /2 * 0.15));
-	//
-	// context.fill();
-	// context.closePath();
-
-}
-
-function renderNeedle(angle, radius, needletype) {
-	'use strict';
-	
-	context.rotate(angle);
-	context.beginPath();
-	if (needletype === "hour") {
-		context.lineWidth = 3;
-		context.fillStyle = '#D6D7D6';
-		context.strokeStyle = colorSec; // '#68D6F2';
-		context.lineJoin = 'round';
-		context.moveTo((radius - radius * 0.15), -2);
-		context.lineTo((radius - radius * 0.15), 2);
-
-		context.lineTo((radius - radius * 0.1), 4);
-
-		context.lineTo(radius, 4);
-		context.lineTo(radius + 10, 0);
-		context.lineTo(radius, -4);
-
-		context.lineTo((radius - radius * 0.1), -4);
-		context.fill();
-
-	} else if (needletype === "minute") {
-		context.lineWidth = 2;
-		context.fillStyle = "#999C9B";
-		context.strokeStyle = '#FFFFFF';
-		context.lineJoin = 'round';
-		context.moveTo((radius - radius * 0.15), -2);
-		context.lineTo((radius - radius * 0.15), 2);
-
-		context.lineTo((radius - radius * 0.1), 4);
-
-		context.lineTo(radius, 4);
-		context.lineTo(radius + 10, 0);
-		context.lineTo(radius, -4);
-
-		context.lineTo((radius - radius * 0.1), -4);
-		context.fill();
-	} else if (needletype === "second") {
-		context.lineWidth = 6;
-		context.strokeStyle = colorSec; // '#28ABE1';
-		// context.moveTo(-10, 0);
-		// context.lineTo(0, 0);
-		//
-		// context.lineWidth = 2;
-		// context.moveTo(0, 0);
-		// context.lineTo(0, 0);
-		// context.lineTo(radius, 0);
-
-		context.moveTo(radius, -10);
-		context.lineTo(radius, 5);
-
-		}
-
-	context.closePath();
-	context.stroke();
-	context.closePath();
-	context.restore();
-
-}
-
-function renderHourNeedle(hour) {
-	'use strict';
-
-	
-	if (playId === 0)
-		return;
-
-	context.save();
-	context.translate(canvas.width / 2, canvas.height / 2);
-	
-	var angle = null, radius = null;
-
-	angle = (hour - 3) * (Math.PI * 2) / 12;
-	radius = clockRadiusX * 0.80;
-	renderNeedle(angle, radius, "hour");
-}
-
-function renderMinuteNeedle(minute) {
-	'use strict';
-	
-	if (playId === 0)
-		return;
-
-	context.save();
-	context.translate(canvas.width / 2, canvas.height / 2);
-	
-	var angle = null, radius = null;
-
-	angle = (minute - 15) * (Math.PI * 2) / 60;
-	radius = clockRadiusX * 0.85;
-	renderNeedle(angle, radius, "minute");
-}
-
-function renderSecondNeedle(seconds) {
-	'use strict';
-
-	
-	if (playId === 0)
-		return;
-
-	context.save();
-	context.translate(canvas.width / 2, canvas.height / 2);
-	
-	var angle = null, radius = null, outerradius = null, dx1, dy1, dx2, dy2;
-
-	angle = ((seconds * 1000) - 15000) * (Math.PI * 2) / 60000.0;
-
-	
-	radius = clockRadiusX * 0.87;
-
-	outerradius = clockRadiusX * 0.87;
-	renderNeedle(angle, outerradius, "second");
-
-	
-}
-
-function renderBattery(battery) {
-	'use strict';
-
-	if (playId === 0 || playId === 2)
-		return;
-
-	try {
-		context.beginPath();
-		context.font = 'bold 20px monospace';
-		context.textAlign = 'center';
-		context.textBaseline = 'middle';
-		context.fillStyle = '#999999';
-
-		var batteryPercentage = battery.level;
-
-		context.fillText(Math.floor(batteryPercentage * 100) + '%',
-				canvas.width * 5 / 10, canvas.height * 2.65 / 10);
-		context.closePath();
-
-		context.beginPath();
-		context.fillStyle = '#666666';
-		context.strokeStyle = '#666666';
-		context.lineWidth = 2;
-
-		context.rect(canvas.width * 4.3 / 10, canvas.height * 1.75 / 10,
-				canvas.width * 1.2 / 10, canvas.height * 0.5 / 10);
-		context.fillRect(canvas.width * 5.5 / 10, canvas.height * 1.90 / 10,
-				canvas.width * 0.25 / 10, canvas.height * 0.2 / 10);
-		context.stroke();
-		context.closePath();
-
-		context.beginPath();
-		context.fillStyle = '#CCCCCC';
-		if (batteryPercentage < 0.10)
-			context.strokeStyle = '#D10000';
-		else if (batteryPercentage >= 0.1 && batteryPercentage < 0.25)
-			context.strokeStyle = '#FFC200';
-		else
-			context.strokeStyle = '#999999';
-
-		context.lineWidth = 4;
-		if (batteryPercentage > 0) {
-			context.moveTo(canvas.width * 4.6 / 10, canvas.height * 2 / 10 + 3);
-			context.lineTo(canvas.width * 4.6 / 10, canvas.height * 2 / 10 - 3);
-		}
-		if (batteryPercentage > 0.35) {
-			context.moveTo(canvas.width * 4.9 / 10, canvas.height * 2 / 10 + 3);
-			context.lineTo(canvas.width * 4.9 / 10, canvas.height * 2 / 10 - 3);
-		}
-		if (batteryPercentage > 0.75) {
-			context.moveTo(canvas.width * 5.2 / 10, canvas.height * 2 / 10 + 3);
-			context.lineTo(canvas.width * 5.2 / 10, canvas.height * 2 / 10 - 3);
-		}
-
-		context.stroke();
-
-		context.closePath();
-
-		context.restore();
-	} catch (err) {
-		console.log(err);
-	}
-}
-
-function changeColor() {
-	colorIndex = colorIndex + 1;
-
-	if (colorIndex > 10)
-		colorIndex = 1;
-
-	if (colorIndex === 1) {
-		colorSec = "#28ABE1";
-	} else if (colorIndex === 2) {
-		colorSec = "#DCFFA8";
-	} else if (colorIndex === 3) {
-		colorSec = "#A8DEFF";
-	} else if (colorIndex === 4) {
-		colorSec = "#DBA8FF";
-	} else if (colorIndex === 5) {
-		colorSec = "#FFA8DF";
-	} else if (colorIndex === 6) {
-		colorSec = "#FFA8A8";
-	} else if (colorIndex === 7) {
-		colorSec = "#B8A8FF";
-	} else if (colorIndex === 8) {
-		colorSec = "#E9E067";
-	} else if (colorIndex === 9) {
-		colorSec = "#F26520";
-	} else if (colorIndex === 10) {
-		colorSec = "#a200ff";
-	}
-
-	saveColorStorage(colorSec);
-}
-
-function changeBGImage() {
-	try{
-    bgIndex = bgIndex + 1;
-
-    if (bgIndex === 9)
-        bgIndex = 0;
-
-    setBGImage();
-	}
-	catch(e){
-		console.log("error: " + e);
-	}
-}
-
-function setBGImage() {
-    var colorBg = "#000000";
-    if (bgIndex === 0) {
-        colorBg = "#000000"            
-    } else if (bgIndex === 1) {
-        colorBg = "#2A2222";
-    } else if (bgIndex === 2) {
-        colorBg = "#2E1F2D";
-    } else if (bgIndex === 3) {
-        colorBg = "#22242A";
-    } else if (bgIndex === 4) {
-        colorBg = "#201F2E";
-    } else if (bgIndex === 5) {
-        colorBg = "#2A222A";
-    } else if (bgIndex === 6) {
-        colorBg = "#2A2222";
-    } else if (bgIndex === 7) {
-        colorBg = "#1F242E";
-    } else if (bgIndex === 8) {
-        colorBg = "#2E1F1F";
-    }
-
-    //canvas.style.background = '-webkit-radial-gradient(' + colorBg + ' 30%, black 70%)';
-    canvas.style.background = colorBg;
-    saveBGColorStorage(colorBg);
-}
-
-
-
-
-function changePlay() {
-	playId = playId + 1;
-
-	if (playId > 2)
-		playId = 0;
-
-	if (playId < 1 || playId === 2) {
-		document.getElementById('imgWeatherIcon').style.visibility = 'hidden';
-		document.getElementById('imgHrHist').style.visibility = 'hidden';
-		document.getElementById("imgConnection").style.visibility = 'hidden';
-		
-	} else if(playId === 1) {
-		document.getElementById('imgWeatherIcon').style.visibility = 'visible';
-		document.getElementById('imgHrHist').style.visibility = 'visible';
-		document.getElementById("imgConnection").style.visibility = 'visible';
-	}
-	
-	showMenu();
-	showMenu();
-
-}
-
-
-
-
-function renderShowMonth(month, day, dateofMonth) {
-	var sDay, sMonth;
-
-	try {
-		if (day === 0) {
-			sDay = LANG_JSON_DAY_SHORT_DATA["Sunday"];
-		} else if (day === 1) {
-			sDay = LANG_JSON_DAY_SHORT_DATA["Monday"];
-		} else if (day === 2) {
-			sDay = LANG_JSON_DAY_SHORT_DATA["Tuesday"];
-		} else if (day === 3) {
-			sDay = LANG_JSON_DAY_SHORT_DATA["Wednesday"];
-		} else if (day === 4) {
-			sDay = LANG_JSON_DAY_SHORT_DATA["Thursday"];
-		} else if (day === 5) {
-			sDay = LANG_JSON_DAY_SHORT_DATA["Friday"];
-		} else if (day === 6) {
-			sDay = LANG_JSON_DAY_SHORT_DATA["Saturday"];
-		}
-	} catch (Exception) {
-
-		console.log("Anand" + Exception);
-		if (day === 0) {
-			sDay = "Sun";
-		} else if (day === 1) {
-			sDay = "Mon";
-		} else if (day === 2) {
-			sDay = "Tue";
-		} else if (day === 3) {
-			sDay = "Wed";
-		} else if (day === 4) {
-			sDay = "Thu";
-		} else if (day === 5) {
-			sDay = "Fri";
-		} else if (day === 6) {
-			sDay = "Sat";
-		}
-	}
-
-	try {
-		if (month === 0) {
-			sMonth = LANG_JSON_MONTH_SHORT_DATA["1"];
-		} else if (month === 1) {
-			sMonth = LANG_JSON_MONTH_SHORT_DATA["2"];
-		} else if (month === 2) {
-			sMonth = LANG_JSON_MONTH_SHORT_DATA["3"];
-		} else if (month === 3) {
-			sMonth = LANG_JSON_MONTH_SHORT_DATA["4"];
-		} else if (month === 4) {
-			sMonth = LANG_JSON_MONTH_SHORT_DATA["5"];
-		} else if (month === 5) {
-			sMonth = LANG_JSON_MONTH_SHORT_DATA["6"];
-		} else if (month === 6) {
-			sMonth = LANG_JSON_MONTH_SHORT_DATA["7"];
-		} else if (month === 7) {
-			sMonth = LANG_JSON_MONTH_SHORT_DATA["8"];
-		} else if (month === 8) {
-			sMonth = LANG_JSON_MONTH_SHORT_DATA["9"];
-		} else if (month === 9) {
-			sMonth = LANG_JSON_MONTH_SHORT_DATA["10"];
-		} else if (month === 10) {
-			sMonth = LANG_JSON_MONTH_SHORT_DATA["11"];
-		} else if (month === 11) {
-			sMonth = LANG_JSON_MONTH_SHORT_DATA["12"];
-		}
-	} catch (Exception) {
-		if (month === 0) {
-			sMonth = "Jan";
-		} else if (month === 1) {
-			sMonth = "Feb";
-		} else if (month === 2) {
-			sMonth = "Mar";
-		} else if (month === 3) {
-			sMonth = "Apr";
-		} else if (month === 4) {
-			sMonth = "May";
-		} else if (month === 5) {
-			sMonth = "June";
-		} else if (month === 6) {
-			sMonth = "July";
-		} else if (month === 7) {
-			sMonth = "Aug";
-		} else if (month === 8) {
-			sMonth = "Sept";
-		} else if (month === 9) {
-			sMonth = "Oct";
-		} else if (month === 10) {
-			sMonth = "Nov";
-		} else if (month === 11) {
-			sMonth = "Dec";
-		}
-	}
-
-	try {
-
-		if (playId === 1) {
-			var outerradius = clockRadiusX * 0.25;
-
-		    context.beginPath();
-		    context.fillStyle = '#131213';
-		    context.strokeStyle = '#666666';
-		    context.lineWidth = 2;
-
-		    context.arc(canvas.width * 5 / 10, canvas.height * 7.5 / 10, outerradius, 0, Math.PI * 2, false);
-		    //context.stroke();
-		    context.fill();
-		    context.closePath();
-
-		    context.beginPath();
-		    context.font = '22px monospace';
-		    context.textAlign = 'center';
-		    context.textBaseline = 'middle';
-		    context.fillStyle = '#CCCCCC';
-
-		    context.fillText(sDay, canvas.width * 5 / 10, canvas.height * 6.8 / 10);
-		    context.closePath();
-
-		    context.beginPath();
-		    context.font = '30px monospace';
-		    context.textAlign = 'center';
-		    context.textBaseline = 'middle';
-		    context.fillStyle = '#FFFFFF';
-
-		    context.fillText(dateofMonth, canvas.width * 5 / 10, canvas.height * 7.5 / 10);
-		    context.closePath();
-
-		    context.beginPath();
-		    context.font = '20px monospace';
-		    context.textAlign = 'center';
-		    context.textBaseline = 'middle';
-		    context.fillStyle = '#999999';
-
-		    context.fillText(sMonth, canvas.width * 5 / 10, canvas.height * 8.2 / 10);
-		    context.closePath();
-
-		}
-		else if(playId === 0){
-
-				context.beginPath();
-			    context.font = '30px monospace';
-			    context.textAlign = 'center';
-			    context.textBaseline = 'middle';
-			    context.fillStyle = '#CCCCCC';
-
-			    context.fillText(sDay +", " + sMonth +" " + dateofMonth, canvas.width * 5 / 10, canvas.height * 6.8 / 10);
-			    context.closePath();
-		}
-
-		context.restore();
-	} catch (error) {
-		console.log("Error in showMonth:" + error);
-	}
-
-}
-
-function showBrand() {
-
-	context.beginPath();
-
-	context.fillStyle = "#999999";
-	context.textAlign = 'center';
-	context.textBaseline = 'middle';
-	// context.font = '15px italic monospace';
-	context.font = "italic bold 15px monospace";
-
-	context.fillText("Xpressions", (canvas.width * 0.5), (canvas.height * 0.15));
-
-	context.fill();
-	context.closePath();
-}
-
-function renderShowAdvanced() {
-
-	
-	context.beginPath();
-	context.fillStyle = '#111111';
-	context.strokeStyle = '#222222';
-	context.arc(canvas.width * 3 / 10, canvas.height * 7.5 / 10,
-			clockRadiusX * 0.2, 0, Math.PI * 2, false);
-	context.stroke();
-	context.fill();
-	context.closePath();
-
-	context.beginPath();
-	context.fillStyle = '#111111';
-	context.strokeStyle = '#222222';
-	context.arc(canvas.width * 7 / 10, canvas.height * 7.5 / 10,
-			clockRadiusX * 0.2, 0, Math.PI * 2, false);
-	context.stroke();
-	context.fill();
-	context.closePath();
-
-
-
-
-
-
-
-}
-
-function renderShowSteps() {
-
-	
-//	context.beginPath();
-//	context.fillStyle = '#111111';
-//	context.strokeStyle = '#222222';
-//	context.arc(canvas.width * 1.5 / 10, canvas.height * 5 / 10,
-//			clockRadiusX * 0.2, 0, Math.PI * 2, false);
-//	//context.stroke();
-//	context.fill();
-//	context.closePath();
-
-
-	// Steps Start
-	// --------------------------------------------------------
-
-	//var c = document.getElementById("imgWeatherIcon");
-
-	
-	//c.style.visibility = 'visible';
-
-	context.beginPath();
-	context.fillStyle = '#FFFFFF';
-	context.textAlign = 'center';
-	context.textBaseline = 'middle';
-	context.font = '15px monospace';
-	
-	if (steps != undefined) {
-		//c.src = "icons\\" + temperatureId + ".png";
-		
-		//Steps
-		
-		context.fillText("Steps",
-				canvas.width * 1.5 / 10, canvas.height * 4.1 / 10);
-		context.font = '20px monospace';
-			context.fillText(steps,
-					canvas.width * 1.5 / 10, canvas.height * 4.6 / 10);
-			
-			//Calories
-			context.font = '15px monospace';
-			context.fillText("Cal",
-					canvas.width * 1.5 / 10, canvas.height * 5.3 / 10);
-			context.font = '20px monospace';
-				context.fillText(calories,
-						canvas.width * 1.5 / 10, canvas.height * 5.8 / 10);
-		
-	} 
-	context.fill();
-	context.closePath();
-	// Steps End
-
-
-
-	
-}
-
-function renderDigitalTime(hour, minute, day, dateOfMonth, month, seconds) {
-	'use strict';
-	try {
-		// context.save();
-
-		// Assigns the clock creation location in the middle of the canvas
-		context.translate(-canvas.width / 2, -canvas.height / 2);
-
-		if (minute < 10) {
-			minute = "0" + minute;
-		}
-
-		var ampm = "AM", sDay = "Test", sMonth = "", outerradius, twentyfourhourangle, twentyfourhourradius, twentyfourhour, twentyfourminute, secondsangle;
-		secondsangle = (seconds - 15) * (Math.PI * 2) / 60;
-		twentyfourhour = hour;
-		twentyfourminute = minute;
-		if (timeformat === "0") {
-			if (hour > 11) {
-				ampm = "PM";
-				if (hour > 12) {
-					hour = hour - 12;
-				}
-
-			}
-
-			if (hour === 0) {
-				hour = 12;
-			}
-		}
-
-		if (hour < 10) {
-			hour = "0" + hour;
-		}
-
-		if (seconds < 10)
-			seconds = "0" + seconds;
-
-		if (playId === 0) {
-			
-
-			renderShowMonth(month, day, dateOfMonth);
-			return;
-		} else if (playId === 1) {
-			
-
-			renderShowMonth(month, day, dateOfMonth);
-
-			showBrand();
-
-			renderShowAdvanced();
-			
-			renderShowSteps();
-			return;
-		} 
-		
-	} catch (error) {
-		console.log('Error in renderDigitalTime' + error);
-	}
-}
 
 function getDate() {
 	'use strict';
@@ -738,36 +25,9 @@ function getDate() {
 	return date;
 }
 
-function successCallback(_battery) {
-
-	battery = _battery;
-	renderBattery(_battery);
-}
-
-function errorCallback(error) {
-	/* Log the device battery level to the console */
-	console.log("ERROR is " + error);
-
-	context.beginPath();
-	context.font = '20px serif';
-	context.textAlign = 'center';
-	context.textBaseline = 'middle';
-	context.fillStyle = '#FF0000';
-	context.fillText("Error: " + error, 100, 210);
-
-	context.closePath();
-	context.restore();
-}
-
 function watch() {
 	'use strict';
 
-	if(playId === 2){
-		getBatteryMarine();
-		watchMarine();
-		return;
-	}
-	
 	// Import the current time
 	// noinspection JSUnusedAssignment
 	var date = getDate(), hours = date.getHours(), minutes = date.getMinutes(), seconds = date
@@ -775,49 +35,51 @@ function watch() {
 			+ seconds / 60, milliseconds = seconds * 1000
 			+ date.getMilliseconds(), day = tizen.time.getCurrentDateTime()
 			.getDay(), dateOfMonth = tizen.time.getCurrentDateTime().getDate(), month = tizen.time
-			.getCurrentDateTime().getMonth(), nextMove = 800;
+			.getCurrentDateTime().getMonth(), nextMove = 1000;
 
 	// var battery = tizen.systeminfo.
 	// Erase the previous time
 	context.clearRect(0, 0, context.canvas.width, context.canvas.height);
-	//setBGImage();
+	// setBGImage();
 	context.save();
 
 	// Assigns the clock creation location in the middle of the canvas
 	// context.translate(canvas.width / 2, canvas.height / 2);
 
-	renderBattery(battery);
-
+	handleTheme();
+	
+	renderBatteryCircular(battery);
+	
 	renderDots(seconds);
 
 	renderDigitalTime(hours, minutes, day, dateOfMonth, month, seconds);
-
-	 renderSecondNeedle(seconds);
-	 renderHourNeedle(hour);
-	 renderMinuteNeedle(minute);
-
 	
 	
+	showDateAdvanced(month, day, dateOfMonth);
+	
+	renderShowSteps();
+	
+	renderHourNeedle(hour);
+	renderMinuteNeedle(minute);
+	renderSecondNeedle(seconds);
+	
+	renderCenterDots();
 
 	try {
-		// console.log("Get Current Date Time ");
+		
 		var now = tizen.time.getCurrentDateTime();
 
-		// console.log("Get Current Date Time: " + now);
-
+		
 		if (lastFetch === 0) {
 			lastFetch = tizen.time.getCurrentDateTime().addDuration(
 					new tizen.TimeDuration(-1, "MSECS"));
 		}
 
-		// console.log("lastFetch :" + lastFetch);
+		
 		var timeDiff = now.difference(lastFetch);
 
-		// console.log("fetchAtleastOnce :" + fetchAtleastOnce);
-		//if (minutes === 0 && seconds < 1) {
-
-		//	fetch();
-		//} else 
+		
+		
 		if (fetchAtleastOnce < 1) {
 			fetchAtleastOnce = 1;
 			fetch();
@@ -837,75 +99,6 @@ function watch() {
 
 }
 
-function getBattery() {
-	try {
-		var date = getDate(), nextMove = 30000;
-		tizen.systeminfo.getPropertyValue("BATTERY", successCallback,
-				errorCallback);
-
-		setTimeout(function() {
-			window.requestAnimationFrame(getBattery);
-		}, nextMove);
-	} catch (Exception) {
-	}
-}
-
-
-
-function showMenu() {
-return;
-	if (document.getElementById('menu').style.visibility == 'visible') {
-		document.getElementById('menu').style.visibility = 'hidden';
-
-		
-
-			document.getElementById('img4').style.visibility = 'hidden';
-		
-	} else {
-		document.getElementById('menu').style.visibility = 'visible';
-
-		if (playId === 0  || playId === 2) {
-
-			document.getElementById('img4').style.visibility = 'hidden';
-//			document.getElementById('img5').style.visibility = 'visible';
-//			document.getElementById('imgTemp').style.visibility = 'hidden';
-//			document.getElementById('imgWeatherRefresh').style.visibility = 'hidden';
-//
-//			document.getElementById('imgWeatherIcon').style.visibility = 'hidden';
-//			document.getElementById('imgHrHist').style.visibility = 'hidden';
-//			
-
-		} else {
-			document.getElementById('img4').style.visibility = 'visible';
-//			document.getElementById('img5').style.visibility = 'visible';
-//			document.getElementById('imgTemp').style.visibility = 'visible';
-//			document.getElementById('imgWeatherRefresh').style.visibility = 'visible';
-
-		}
-
-		setTimeout(function() {
-			window.requestAnimationFrame(closeMenu());
-		}, 40000);
-	}
-
-}
-
-function closeMenu() {
-	return;
-	if (document.getElementById('menu').style.visibility == 'visible') {
-		document.getElementById('menu').style.visibility = 'hidden';
-
-		document.getElementById('img4').style.visibility = 'hidden';
-//		document.getElementById('img5').style.visibility = 'hidden';
-//		document.getElementById('imgTemp').style.visibility = 'hidden';
-//		document.getElementById('imgWeatherRefresh').style.visibility = 'hidden';
-	}
-
-	clearTimeout(function() {
-		window.requestAnimationFrame(closeMenu());
-	});
-}
-
 window.onload = function() {
 	'use strict';
 
@@ -920,18 +113,8 @@ window.onload = function() {
 	canvas.width = document.width;
 	canvas.height = document.height; // canvas.width;
 
-	timeformat = "0"; // 12Hr
-
-	/*
-	 * window.addEventListener('visibilitychange', function(e) { try {
-	 * console.log("Visibility changed to " + e); if (pedoFlag === 1) { if
-	 * (document.visibilityState === 'visible') { console.log("Visible"); try {
-	 * pedometer.start(PEDO_CONTEXT_TYPE, function onSuccess( pedometerInfo) {
-	 * handlePedometerInfo(pedometerInfo, 'pedometer.change'); }); } catch
-	 * (Exception) { } } else { console.log("Hidden"); stopPedo(); } } } catch
-	 * (err) { console.error('Error: ', err.message); } }, true);
-	 */
-
+	itimeformat = 0;
+	
 	window.addEventListener('tizenhwkey', function(e) {
 		if (e.keyName === 'back') {
 			try {
@@ -952,36 +135,23 @@ window.onload = function() {
 		} else {
 			console.log("Color NOT saved");
 		}
-		
-		
-		var colorBGValue = localStorage.getItem(savedBGColorSelectionKey);
-        if (colorBGValue != null) {
-            //canvas.style.background = '-webkit-radial-gradient(' + colorBGValue + ' 30%, black 70%)';
-        	canvas.style.background = "#000000";
-            console.log("Color saved is:" + colorBGValue);
-        } else {
-            console.log("Color NOT saved");
-        }
 
-		
+		var colorBGValue = localStorage.getItem(savedBGColorSelectionKey);
+		if (colorBGValue != null) {
+			// canvas.style.background = '-webkit-radial-gradient(' +
+			// colorBGValue + ' 30%, black 70%)';
+			canvas.style.background = "#000000";
+			console.log("Color saved is:" + colorBGValue);
+		} else {
+			console.log("Color NOT saved");
+		}
+
 		getBattery();
 	} catch (error) {
 		console.error("Error while loading: " + error);
 	}
 
-//	if (bHRON === 0) {
-//		document.getElementById('imgHrHist').style.visibility = 'hidden';
-//
-//		window.webapis.motion.start("HRM", onchangedCB);
-//		bHRON = 1;
-//
-//		setTimeout(function() {
-//			window.requestAnimationFrame(stopHeartRate());
-//		}, 25000);
-//	}
-
 	
-
 	connect();
 
 	window.requestAnimationFrame(watch);
