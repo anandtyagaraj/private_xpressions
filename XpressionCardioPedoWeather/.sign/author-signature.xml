@@ -120,7 +120,7 @@
 </Reference>
 <Reference URI="js%2Fmain.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>Gt59nLB426nLg1KKojJgT/hCxEh4/WyIqK3vqsEwuXM=</DigestValue>
+<DigestValue>xWicFvWKVzK/wtG9xaQah0eSJju6rpNc4FdjTz3tzJ0=</DigestValue>
 </Reference>
 <Reference URI="js%2Fpedo.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -255,11 +255,11 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-Lzdn5MUNQnQIPmRGyjls2GLzCWMzZ2z4uZDKOdL4b1hn4pNWhAfbLVLnRtjXqc6T4SBxN02if3TZ
-/Tfp1KPb5pC3DCEMmfJVFmxGmDMIPK9djc0KGBJ/n5nGPe0WD0u04K9wxjgDfvEErFlP46KvXxgL
-KzAIE79IYRkGbbBs3dcZo0GPXCBKK8wJ07yu/ryDZGN2cV669W5pLivkRDhqh/vvjNIrzliCSIrL
-JxODRUOb2OVI1+nn5JcP4pGOLPVyGsX4QOzrifcdWQhAKg4IHb2/JRp+fSk1xJjJDDTfhG/W0KaC
-MmDKlV31uF7hH140Up70XQKvE96XmUYw1+zbxQ==
+eUsIuWfHq+6qXyvzG4iUiOMUft9iVverPLSd6q6QWQ9NLHCjBc1WcmlXZ4JdAZd0fvxsTYnZBBnZ
+kKcLKSI6/A0eKWusOMR14JrXXRJ6+bmSs0vlEQiBxkGhK9nfucoKpQVpdSBHuwJfirVFLDXunltf
+suWJVQT07zuoWUQBGmu8U9FvXJF99vZTjciI71/xVUZjSuiV+fzH6TyemkfL5VOtQrxNBI4qREQ9
+pyKPSgiTdpeCGgs9y99gtSV7XRsyVR2F+TxFnuc52mwqxizxS3h/zDgEZMtSNWEssmuoezTfC4ST
+dISoBtzC2ulP9hFdH7y3ISngnJ6i6RNbRXthEg==
 </SignatureValue>
 <KeyInfo>
 <X509Data>

@@ -2,25 +2,29 @@
 <SignedInfo>
 <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></CanonicalizationMethod>
 <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"></SignatureMethod>
+<Reference URI="12_24.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>ogCaVs3r5J9gDgKUuWDra+jRHKyqjXmSXqIzcrWPjZI=</DigestValue>
+</Reference>
 <Reference URI="360.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>RI8FqjCZ8Y7V7SWa8tulnzB+L7/Mh4EtLagIeuHuzVU=</DigestValue>
+<DigestValue>H5ADem51iAzGnJUhh6I86opUgIGQUuZz9iTTIgEx9mw=</DigestValue>
 </Reference>
 <Reference URI="AUTHORS">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>GueiFA0tkOJYGCwi6dfZwsdsCfV0hWCGgntSh0HE/Kw=</DigestValue>
 </Reference>
-<Reference URI="Gear_WatchFace_Xpressions_eng.jpg">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>0kVEk1JG5ZuLNSWFo4Y6pUnafAHH+AdMo35ASdrCUMQ=</DigestValue>
-</Reference>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>C9hS/DUU1gX4OGVimuhRQa3egoDS9CJPSHZ3fe2dnyU=</DigestValue>
+<DigestValue>eO55fY2pF+IyITjCvHzEmkWRp8PMMGu1x+VKkvA1uhY=</DigestValue>
+</Reference>
+<Reference URI="change_image.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>Fy6hP0xy8KdSE369g2w5nhZdwzSG2y0sCi9faEc1MgU=</DigestValue>
 </Reference>
 <Reference URI="config.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>yzvidyY59jBcCaDxyJPnA78mLOYJEVAS6dMgJKJdpoQ=</DigestValue>
+<DigestValue>msgSPwFzUPnO3xYq5tJrO+7XvHt89mCIZ66urs/kSbQ=</DigestValue>
 </Reference>
 <Reference URI="connect.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -32,7 +36,7 @@
 </Reference>
 <Reference URI="index.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>LjZZ5j3ZWgp2ksYz0RPQkXLkUHoKJNkdndiZlUqYGfg=</DigestValue>
+<DigestValue>mMCVw5aXeYoCE953v19A8ETahlIKGAlZQjNb7rvopsA=</DigestValue>
 </Reference>
 <Reference URI="js%2Fanalogdisplay.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -42,41 +46,33 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>vhVdfoDoh8iCTkkjOYBhz/KrVrDWr81CQHVgz9ExwAA=</DigestValue>
 </Reference>
+<Reference URI="js%2Fcardio.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>P1oyREUhQgl+/Fy1AoeZ8SOCa85yTTwtXHtbyFSN3t8=</DigestValue>
+</Reference>
 <Reference URI="js%2Fdatabase.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>LH7iwokU8pGja4Tvz+OKEQjb995kGGaGIgRSlulSasI=</DigestValue>
 </Reference>
 <Reference URI="js%2Fdatedisplay.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>C9fYOCCY21EyN6lDDTvZ69/uRPBWZJll25wjXcudJz0=</DigestValue>
+<DigestValue>OqJZos/VYyNOpCGVBTMvnJT+fqS9ZkStqlAF3XLo1Zc=</DigestValue>
 </Reference>
 <Reference URI="js%2Fdigitaldisplay.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>/jSpWyUN+RfQjV2Sulp08AnfD5IbIUPqxANxuGtF9Fs=</DigestValue>
-</Reference>
-<Reference URI="js%2Fhostconnectivity.js">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>dYS0BPgCb3T+FnWFxw981OTOGz6wqf6GFwZHB8QWDcs=</DigestValue>
+<DigestValue>TI5UIGjK2aqXNBkAGxLXZgvhNfzacZVX1zV3Z8fEg3w=</DigestValue>
 </Reference>
 <Reference URI="js%2Fmain.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>syMYt9QzYdNeL8Jsxqu01OZ4FfskGdEzwAQTE8CCekU=</DigestValue>
+<DigestValue>DrWGIPgUa2rHQj/gFidesL/ys//WXUQW8tsOzBrPb6w=</DigestValue>
 </Reference>
 <Reference URI="js%2Fmenu.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>nrNGLbzEFYgVHFG7ocUBCdrS9rD3jLEnTBeBNm+sJ9g=</DigestValue>
-</Reference>
-<Reference URI="js%2Fstepsdisplay.js">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>4OMkYEujEwqquiOrbuOpMBubJa+mfIyRF4HWr/PlKAc=</DigestValue>
+<DigestValue>mZRKKKqcAmBEAcMl2HXS23MCDyuzVhKxj+DIWNlHQYg=</DigestValue>
 </Reference>
 <Reference URI="js%2Fthemer.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>7oG1NR2wuFN6mCMIbWSDYwvi0xI9wb696MNXOSfbP4g=</DigestValue>
-</Reference>
-<Reference URI="js%2Fweatherdisplay.js">
-<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=</DigestValue>
+<DigestValue>8NeryYWODdm3CIiT4IIxKxYFOePgecDntoY+ABBKxcs=</DigestValue>
 </Reference>
 <Reference URI="locales%2Fbe%2Flanguage.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -166,9 +162,13 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>Fk1gGT4+fQ8ri2Qajg5bq7YLKta3AmU416i9eGoErVk=</DigestValue>
 </Reference>
-<Reference URI="reconnect.png">
+<Reference URI="photon2.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>dbHRywvJAEXWruHiWMM4GPhvozKB+MylBZE76SI3DJo=</DigestValue>
+<DigestValue>B/CIIieGraGn8IEI/+CLqvU+3xq+cdMG32y1BcuT+Jc=</DigestValue>
+</Reference>
+<Reference URI="play_menu.png">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>Oiz51w89LRrHaZWLWMJPT7Euz7BnbIQbbfHqTOYUj1Q=</DigestValue>
 </Reference>
 <Reference URI="res%2Fxml%2Faccessoryservices.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -195,54 +195,52 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-UTtrT2LKNwePzsDhReY1JfxRYqGJ7pIuZSMK1iXD2bLnrUnH97gMzbxRYNvExBiY3uMfyCsXYDNT
-+pnAt7bb68fVngwy2GkwyC0YPCIuMOWYPYCIL/wAOm4Dann1O7NRKXg2pwOpAGaLJbSMAwVzT9z1
-jcVXP3rnbEeM4RHSuMRtLDEwMTZTSehA7Zx/RW5znpJKDSdOth4iv4l0vQ63kBttijkCUkjn83UZ
-AFmEqCHv0wt1IEjNqTL7GyPJGl4Iibqv+C7i/DcxTH1FKbTU702Eq4XZbL5bdQtIV5K9sotWFpEh
-USeY6+rySsuKU1TcUf2JCy3uJimT+6s9ax7eng==
+RMqF/z8K0KvXTh5D3WgnR6jjkJ6uVbfFJ5TutaZhm5zrINfVshmr0EFpqPiKNGf+9Eb8EivP49bf
+joMHOi6PGE995IXWpXN+FaU/uIfAGOEekD38I5oBDnV+Lqvg8NSgqgVUSoZNxq7DLuTgKbshyR50
+W/ZDOGQ8kDz7789Dih4spRT1IVYnBEGFsDM1jx0cZJNyuC2rLv8bBKzCSuojn11Xwq8XPJqeZqnN
+RYGrBu5zxdk+Ztizy+Wd36OR0buqak0tUZ6wV4YlBpB4H/kPFq2SX+8JIpfygYW0gFhP64A80zJx
+if6JvwUfE6kuSwBlrvp+dj8Otaj2lPajR01LMQ==
 </SignatureValue>
 <KeyInfo>
 <X509Data>
 <X509Certificate>
-MIIDxzCCAq+gAwIBAgICAMgwDQYJKoZIhvcNAQELBQAwgb0xCzAJBgNVBAYTAktSMRQwEgYDVQQI
-DAtTb3V0aCBLb3JlYTEOMAwGA1UEBwwFU3V3b24xJjAkBgNVBAoMHVNhbXN1bmcgRWxlY3Ryb25p
-Y3MgQ28uLCBMdGQuMQ8wDQYDVQQLDAZNb2JpbGUxKTAnBgNVBAMMIEdFQVIyIERFVkVMT1BFUiBQ
-YXJ0bmVyIENBIENsYXNzMSQwIgYJKoZIhvcNAQkBFhVnZWFyMi5zZWNAc2Ftc3VuZy5jb20wHhcN
-MTYxMTA3MTYyNTU4WhcNMTcxMTA3MTYyNTU4WjBzMREwDwYDVQQDDAhUaXplblNESzEJMAcGA1UE
-CwwAMQkwBwYDVQQKDAAxCTAHBgNVBAcMADEJMAcGA1UECAwAMQkwBwYDVQQGEwAxJzAlBgkqhkiG
-9w0BCQEWGGFuYW5kLnR5YWdhcmFqQGdtYWlsLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCC
-AQoCggEBAJ6Oo7zHKkrBQEYDftejjg2btTVv6KJMgd/21X1l0YAmWQb3HcSSLx8Uo7NUoKI/g6ZZ
-PD/HvauIH4VcMzGWVO9tlr/dcYjlDSxU2r4cTmLApMH8sRh3E3fliKMwFbFZ5F3wUier6n09nIPl
-1CeUvsm5PAEAh3kAUIMjJraoZ6/zdrrAWjB2Q351FfCHwLCzT8J38mPyUuoD/XiI5TAacWKO9/6w
-MjMlgl510DP7CadmkwSvoaa4BPvtAeE5aOZFrh0+omae+jwOTXfbw0T6ndcceFZTIOAgBR2brDXF
-fmzNqEXzESrup9os9i3pvgde1NkEy9MmmAqMvER+jvai/lMCAwEAAaMaMBgwCQYDVR0TBAIwADAL
-BgNVHQ8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBALFeR21Hh8EC7qqhGE/bOzoeIOX0XWd3ATDT
-sveAtjJNCpRaSZlK4Dr1atVpcZzzoDEGA/23SUpvbScQVmO1epoMN51cAjmtQ9CHoYiKogcSRJ5q
-r3Ecte60dtrkfuJaKCthn5uDbzz5kHlExK15cTdjCMR8mvD51iSuOL2rxrc6Bvc9SEnpupb8UO+G
-r0w2w//ifRTWr6Giwv6pCvDO3pxwhKKfANwjeOqKvnfEesOjE9LvacbksOL5ELwvsXI2mOSKNdIM
-aGZGiE5TxBzz8KbOSvfvQpP5GrD3c3ibp1HWqNa5sSpi7bsHS/p3P2F5Iv/UHwzFZZcWXnSHv8Um
-M+Q=
+MIID5TCCAs2gAwIBAgIBZTANBgkqhkiG9w0BAQsFADCBnjELMAkGA1UEBhMCS1IxFDASBgNVBAgM
+C1NvdXRoIEtvcmVhMQ4wDAYDVQQHDAVTdXdvbjEmMCQGA1UECgwdU2Ftc3VuZyBFbGVjdHJvbmlj
+cyBDby4sIEx0ZC4xDzANBgNVBAsMBk1vYmlsZTEwMC4GA1UEAwwnU2Ftc3VuZyBUaXplbiBERVZF
+TE9QRVIgUHVibGljIENBIENsYXNzMB4XDTE3MDQyNDE3MDEzOFoXDTE4MDQyNDE3MDEzOFowczER
+MA8GA1UEAwwIVGl6ZW5TREsxCTAHBgNVBAsMADEJMAcGA1UECgwAMQkwBwYDVQQHDAAxCTAHBgNV
+BAgMADEJMAcGA1UEBhMAMScwJQYJKoZIhvcNAQkBFhhhbmFuZC50eWFnYXJhakBnbWFpbC5jb20w
+ggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC4FkpjvR2hm8LocWNlBkru3LEYpabeBU13
+Arehql0oxDM8RFes802+GWdGgvK0ScQAWHZCI0glkvmMmKd7AIBvm1XeiCtXkLZCuX6+r6viMWbZ
+qkMBbZAhYLnDm4cVCc7vQ9zTYvIoIHxGw8LXt9bvulKiud6EDlBANyTL0Ou0GTF22kArkYbO1acb
+UVgYgekTbtdpPL8ZJM8QSIXh6qK4/M/9e1vZBm23C/8tU5rVld/a+wd+B4R4Jbcug4tpZFNNxNuw
+10sERyCLwq6pca8+qJLdgFbR9i/0YxiWx/Goz2s7fUf6z8lx9ConvCqbWh5b1xE1CGQxZeBp9OmA
+ZG69AgMBAAGjWDBWMFQGA1UdEQRNMEuGFFVSTjp0aXplbjpwYWNrYWdlaWQ9hjNVUk46dGl6ZW46
+ZGV2aWNlaWQ9Mi4wI29XSUxtU1JqNUNEQTMxRTZXMlIvelU3QXBVdz0wDQYJKoZIhvcNAQELBQAD
+ggEBACLQFkIdf7a+Z+eVAr4b8fTpVsoZ9hhT252IjE2TSoQWsHVy8wpLI8FlBQtyW9D8tUCXgyDr
+GyaZjj6RjoVWQRMHdtZv6qe7llJW/bqNsldkOdBIe+nPFctR3+6pXhH5cYBzj6+1k/Y2n7A8LGCf
+8J0/r/Bb/fBJyVnjgT1aIaqk4EKEay/ZZ5L88uJHMFlgg+0/vmxCRLqRF4VsnZh3i3+qD8fwVOpY
+Vyd6d6jeIo4ojImcqJNihIkvvvfEYdtFW8pqIekRPzMvSL4B/3MEU+CSOC+mtwo+rLNd7zOZ+g/H
+dNHMURWKfTRMj0D0AjfzxRMOMo7ueBy8i3ecMGTYDNI=
 </X509Certificate>
 <X509Certificate>
-MIIECjCCAvKgAwIBAgICfa4wDQYJKoZIhvcNAQELBQAwgb8xCzAJBgNVBAYTAktSMRQwEgYDVQQI
+MIIDuzCCAqOgAwIBAgICL+cwDQYJKoZIhvcNAQELBQAwgY8xCzAJBgNVBAYTAktSMRQwEgYDVQQI
 DAtTb3V0aCBLb3JlYTEOMAwGA1UEBwwFU3V3b24xJjAkBgNVBAoMHVNhbXN1bmcgRWxlY3Ryb25p
-Y3MgQ28uLCBMdGQuMQ8wDQYDVQQLDAZNb2JpbGUxKzApBgNVBAMMIkdFQVIyIERFVkVMT1BFUiBQ
-YXJ0bmVyIFJvb3QgQ2xhc3MxJDAiBgkqhkiG9w0BCQEWFWdlYXIyLnNlY0BzYW1zdW5nLmNvbTAe
-Fw0xMzEyMzAxNTAwNDFaFw0yODEyMjYxNTAwNDFaMIG9MQswCQYDVQQGEwJLUjEUMBIGA1UECAwL
-U291dGggS29yZWExDjAMBgNVBAcMBVN1d29uMSYwJAYDVQQKDB1TYW1zdW5nIEVsZWN0cm9uaWNz
-IENvLiwgTHRkLjEPMA0GA1UECwwGTW9iaWxlMSkwJwYDVQQDDCBHRUFSMiBERVZFTE9QRVIgUGFy
-dG5lciBDQSBDbGFzczEkMCIGCSqGSIb3DQEJARYVZ2VhcjIuc2VjQHNhbXN1bmcuY29tMIIBIjAN
-BgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv+w7m+wHDNRNkV3cG/vHki+KS7ELBv8pwQrWMr5K
-vBV7N5sDv5BXaYj7C76+8OLwuK++/bZX0jdyfHR3eYE7wKuhYCEP/cpJMFpG88vnNJfQIVhyxGiQ
-VpsA2lsFpqEPeCwnB4WHvFiFGtLLyvf14bGtwQ4ptHUTWJDpQWMcJ+7/QJ5XKGB5fcsTJKC464vA
-5n/4E8ZEvG5put5hr5dDFh6EVXnRklwJuYaoUR0sHVIfeEx8g1jCgYyjkh29oIA7GcQImFSCNGdx
-0teUx9U+2Lz/CZd2v6J+p5PRvviQGMArNfN4YWDPCsDkw4+fWAxHp3vL3TrNQhF39A/IWohLiwID
-AQABoxAwDjAMBgNVHRMEBTADAQH/MA0GCSqGSIb3DQEBCwUAA4IBAQBDEiauziNRdcJgLp5N8I8I
-ti6MkaChddtBEJ63vOKX8AfRNDApyj82GEVOsl6StwxYzUBvVKO4xhTEvzXfhyprfrhBBop5iJHJ
-ioRGQ5bqHUzlkKy8HB10FgvR+ty2WxQ14e3vtyQhTNSbyIo/kUeLvvQdKCbt/XN6oOpJ1u5YVY/K
-gvy6I+bnVzkf4ZeJvzHoA70YxSbZWHPkJfYp9QY8/J1pYuPyV0UI3bmACj6kWWCx7fKUZcg096dG
-r7G9Q6fYvVRn1acLsobprCmIyr/AD7hg/HHsGuy6D0UgE75n2jzhM9S/JsS4RPSBAT1+o3l/XWCc
-6YzNdQyms9nReAwD
+Y3MgQ28uLCBMdGQuMTIwMAYDVQQDDClTYW1zdW5nIFRpemVuIERFVkVMT1BFUiBQdWJsaWMgUm9v
+dCBDbGFzczAeFw0xMzEyMzAxNTAxNDdaFw0yODEyMjYxNTAxNDdaMIGeMQswCQYDVQQGEwJLUjEU
+MBIGA1UECAwLU291dGggS29yZWExDjAMBgNVBAcMBVN1d29uMSYwJAYDVQQKDB1TYW1zdW5nIEVs
+ZWN0cm9uaWNzIENvLiwgTHRkLjEPMA0GA1UECwwGTW9iaWxlMTAwLgYDVQQDDCdTYW1zdW5nIFRp
+emVuIERFVkVMT1BFUiBQdWJsaWMgQ0EgQ2xhc3MwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK
+AoIBAQCkqW9d0zO5NFOc7u164DKe9Yx+yEgUnsbhnJasqHaqT71qaMxyCOjyysZi7gGycDcgmLcU
+tr2wSMTGWPibK8SrJ8bV/J1cy9nTpljM3s+lbPIVVxZeufhJkU79tXImHLolERd0vui+rj0Xpd9O
+zlyNTRt0+PWVT1taWcbfHL7pUD25hMkTc8C3bC+dUoT1/RhCkXgmUvIor3EnnU0rBtAl4qNtg5y1
+7RLT8dyicieAHCcW923YC/ngMZxnBjbL2Ht1RBUvrL6K3X5+l0VeF4qC3g7TKm/a/SGjq12ZD4sc
+7rglzjSNlTVSGag6/2WkqxE6HheEBWaloYOdauzwydFNAgMBAAGjEDAOMAwGA1UdEwQFMAMBAf8w
+DQYJKoZIhvcNAQELBQADggEBAG88wKjKeTbj5I6wMEvRihd+gWrESJX3bXUSlHWjUfYKcvg3GzM9
+cdooscqJdYgN8ezQuYiJQRk7BaPHSlPGkchsPUjvSM6WvIn9IT+VsEuVBrZNbZMSv6lM6wNig3TE
+h2OxFTW6Bt8mCZB74EP2wb+39Fr5aJwWvmkxQjct3/O+GYPQhe0Lu1qpbbMhzafYYybSmO+om02V
+cTWyJ/vtLUNyGfN7aHyBm6PFE5piAfpBaO9Az+zWil1HOsnzu1tGGnyV6IzQ/UiIo5P2sD8I5lEO
+Xdf9Eicy9y5z2Ci2zrmDcAGWL8o5wOWrCqML2ijximFzyQ/swlMC9xBIX9RCFws=
 </X509Certificate>
 </X509Data>
 </KeyInfo>

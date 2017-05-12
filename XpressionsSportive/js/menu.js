@@ -10,7 +10,7 @@ function showMenu() {
 
 		setTimeout(function() {
 			window.requestAnimationFrame(closeMenu());
-		}, 10000);
+		}, 20000);
 	}
 
 }

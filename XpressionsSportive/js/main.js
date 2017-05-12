@@ -1,7 +1,7 @@
 /*global window, document, tizen, console, setTimeout */
 /*jslint plusplus: true*/
 
-var canvas, context, clockRadiusX, clockRadiusY, battery, itimeformat, colorIndex = 1, colorSec = "#ce5a57", bgIndex = 0, savedColorSelectionKey = "ColorSelectionKey", savedBGColorSelectionKey = "BGColorSelectionKey", steps = 0, calories = 0, windSpeed, windDeg, fetchAtleastOnce = 0, lastFetch = 0, resetDate = 0, lastReset = 0, playId = 1, theme = 0;
+var canvas, context, clockRadiusX, clockRadiusY, battery, itimeformat, colorIndex = 1, colorSec = "#ce5a57", bgIndex = 0, savedColorSelectionKey = "ColorSelectionKey", savedBGColorSelectionKey = "BGColorSelectionKey", steps = 0, calories = 0, windSpeed, windDeg, fetchAtleastOnce = 0, lastFetch = 0, lastStepFetch = 0, resetDate = 0, lastReset = 0, playId = 1, theme = 0, lastHR = 0;
 
 window.requestAnimationFrame = window.requestAnimationFrame
 		|| window.webkitRequestAnimationFrame
@@ -50,14 +50,14 @@ function watch() {
 	
 	renderBatteryCircular(battery);
 	
+	showCardio();
+	
 	renderDots(seconds);
 
 	renderDigitalTime(hours, minutes, day, dateOfMonth, month, seconds);
 	
 	
 	showDateAdvanced(month, day, dateOfMonth);
-	
-	renderShowSteps();
 	
 	renderHourNeedle(hour);
 	renderMinuteNeedle(minute);
@@ -66,31 +66,33 @@ function watch() {
 	renderCenterDots();
 
 	try {
-		
+
 		var now = tizen.time.getCurrentDateTime();
 
-		
-		if (lastFetch === 0) {
-			lastFetch = tizen.time.getCurrentDateTime().addDuration(
+		// console.log("Get Current Date Time: " + now);
+
+		if (lastHR === 0) {
+			lastHR = tizen.time.getCurrentDateTime().addDuration(
 					new tizen.TimeDuration(-1, "MSECS"));
 		}
 
-		
-		var timeDiff = now.difference(lastFetch);
+		// console.log("lastFetch :" + lastFetch);
+		var timeDiff = now.difference(lastHR);
 
-		
-		
-		if (fetchAtleastOnce < 1) {
+		// console.log("fetchAtleastOnce :" + fetchAtleastOnce);
+		if (minutes === 0 && seconds < 1) {
 			fetchAtleastOnce = 1;
-			fetch();
+			calculateHeartRate();
 		} else if (timeDiff.greaterThan(new tizen.TimeDuration(59, "MINS"))) {
-			lastFetch = tizen.time.getCurrentDateTime().addDuration(
+			lastHR = tizen.time.getCurrentDateTime().addDuration(
 					new tizen.TimeDuration(-1, "MSECS"));
-			fetch();
+			calculateHeartRate();
 		}
 	} catch (error) {
 		console.error('Exception' + error);
 	}
+	
+	
 	context.restore();
 
 	setTimeout(function() {
@@ -147,12 +149,14 @@ window.onload = function() {
 		}
 
 		getBattery();
+		
+		calculateHeartRate();
 	} catch (error) {
 		console.error("Error while loading: " + error);
 	}
 
 	
-	connect();
+
 
 	window.requestAnimationFrame(watch);
 

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://anandtyagaraj/sportive" version="1.0.1" viewmodes="maximized">
+    <tizen:application id="P841p9jvVN.XpressionsSportive" package="P841p9jvVN" required_version="2.2"/>
+    <author email="anand.tyagaraj@gmail.com">Anand Tyagaraj</author>
+    <tizen:category name="com.samsung.wmanager.WATCH_CLOCK"/>
+    <content src="index.html"/>
+    <feature name="http://tizen.org/feature/screen.size.all"/>
+    <feature name="http://developer.samsung.com/tizen/feature/network.accessory_protocol"/>
+    <icon src="360.png" height="117" width="117"/>
+    <tizen:metadata key="AccessoryServicesLocation" value="res/xml/accessoryservices.xml"/>
+    <name>Xpressions Sportive</name>
+    <tizen:privilege name="http://developer.samsung.com/privilege/accessoryprotocol"/>
+    <tizen:profile name="wearable"/>
+    <tizen:setting background-support="disable" encryption="disable" hwkey-event="enable"/>
+</widget>

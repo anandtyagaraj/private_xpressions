@@ -43,12 +43,14 @@ function changeTheme() {
 
 	if (theme > 4)
 		theme = 0;
+	
+	watch();
 }
 
 function changeColor() {
 	colorIndex = colorIndex + 1;
 
-	if (colorIndex > 10)
+	if (colorIndex > 16)
 		colorIndex = 1;
 
 	if (colorIndex === 1) {
@@ -72,8 +74,27 @@ function changeColor() {
 	} else if (colorIndex === 10) {
 		colorSec = "#666666";
 	}
+	else if (colorIndex === 11) {
+		colorSec = "#28ABE1";
+	}
+	else if (colorIndex === 12) {
+		colorSec = "#43DA8A";
+	}
+	else if (colorIndex === 13) {
+		colorSec = "#FFC107";
+	}
+	else if (colorIndex === 14) {
+		colorSec = "#99CC00";
+	}
+	else if (colorIndex === 15) {
+		colorSec = "#CC67F3";
+	}
+	else if (colorIndex === 16) {
+		colorSec = "#D31A00";
+	}
 	//
 	saveColorStorage(colorSec);
+	watch();
 }
 
 function changeBGImage() {
@@ -84,6 +105,8 @@ function changeBGImage() {
 			bgIndex = 0;
 
 		setBGImage();
+		
+		watch();
 	} catch (e) {
 		console.log("error: " + e);
 	}
@@ -123,31 +146,34 @@ function changePlay() {
 	if (playId > 2)
 		playId = 0;
 
-	if (playId < 1 || playId === 2) {
-		document.getElementById('imgWeatherIcon').style.visibility = 'hidden';
-		document.getElementById('imgHrHist').style.visibility = 'hidden';
-		document.getElementById("imgConnection").style.visibility = 'hidden';
+//	if (playId < 1 || playId === 2) {
+//		document.getElementById('imgWeatherIcon').style.visibility = 'hidden';
+//		document.getElementById('imgHrHist').style.visibility = 'hidden';
+//		document.getElementById("imgConnection").style.visibility = 'hidden';
+//
+//	} else if (playId === 1) {
+//		document.getElementById('imgWeatherIcon').style.visibility = 'visible';
+//		document.getElementById('imgHrHist').style.visibility = 'visible';
+//		document.getElementById("imgConnection").style.visibility = 'visible';
+//	}
 
-	} else if (playId === 1) {
-		document.getElementById('imgWeatherIcon').style.visibility = 'visible';
-		document.getElementById('imgHrHist').style.visibility = 'visible';
-		document.getElementById("imgConnection").style.visibility = 'visible';
-	}
+//	showMenu();
+//	showMenu();
 
-	showMenu();
-	showMenu();
-
+	
+	watch();
 }
 
 function toggleTimeFormat() {
-	if (itimeformat == 0) {
+	if (itimeformat < 1) {
 		itimeformat = 1; // 24 hr
-	} else if (itimeformat == 1){
+	} else {
 		itimeformat = 0; // 12 hr
 	}
+	watch();
 }
 
-function toggleTimeFormat(format) {	
+function toggleTimeFormatRemote(format) {	
 		itimeformat = format; // 12 hr	
 }
 

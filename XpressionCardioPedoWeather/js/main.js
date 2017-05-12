@@ -42,8 +42,8 @@ window.requestAnimationFrame = window.requestAnimationFrame
 
 var SAAgent = null;
 var SASocket = null;
-var CHANNELID = 104;
-var ProviderAppName = "XpressionGearNotifier";
+var CHANNELID = 1983;
+var ProviderAppName = "Xpressions";
 
 function createHTML(log_string) {
 	// var content = document.getElementById("toast-content");
@@ -133,30 +133,51 @@ function disconnect() {
 
 function onreceive(channelId, data) {
 	try {
-		// createHTML(data);
 		var receivedData = data;
-		var arr = receivedData.split('$');
-		if (arr != null && arr.length > 0) {
-			console.log("Weather update!" + receivedData);
-
-			temperatureInCel = (parseFloat(arr[0]) - 273.15).toFixed(1);
-			temperatureInFah = ((((parseFloat(arr[0]) - 273.15) * 9) / 5) + 32)
-					.toFixed(1);
-
-			temperatureId = arr[1];
-
-			windSpeed = parseFloat(arr[2]);
-			windDeg = parseFloat(arr[3]);
-
+		var obj = JSON.parse(data)
+			console.log("Received Data!" + receivedData);
+	
+		if(obj != null){
+			
+			if(obj.command != null){
+//				switch(obj.command){		
+//				
+//				
+//				case "12":swapTimeFormat("0");break;
+//				case "24":swapTimeFormat("1");break;
+//				case "C":changeTempUnit(0); break;
+//				case "F":changeTempUnit(1); break;
+//				case "TEXT_COLOR":changeColor(); break;
+//				case "BACK_COLOR":changeBGImage(); break;
+//				case "12/24":swapTimeFormat(); break;
+//				case "C/F":changeTempUnit(); break;
+//				case "Theme":changePlay(); break;
+//				case "HR":calculateHeartRate(); break;
+//				
+//				}
+			}
+			else if(obj.temperatureId == undefined){
+				//steps = obj.steps;
+				//calories = obj.calories;
+			}
+			else{
+				temperatureId = obj.temperatureId;
+				temperatureInCel = obj.tempCel;
+				temperatureInFah = obj.tempFah;
+				console.log("Celcius: " + temperatureInCel);
+				console.log("Fah: " + temperatureInFah);
+				console.log("TempId: " + temperatureId);
+			}
 		}
+		
 
-		if (receivedData == "No Weather") {
-			fetchAtleastOnce = 0;
-		} else {
+//		if (receivedData == "No Weather") {
+//			//fetchAtleastOnce = 0;
+//		} else {
 			fetchAtleastOnce = 1;
 
 			lastFetch = tizen.time.getCurrentDateTime();
-		}
+		//}
 
 	} catch (err) {
 		console.log("onReceive: exception [" + err.name + "] msg["
@@ -166,7 +187,7 @@ function onreceive(channelId, data) {
 
 function fetch() {
 	try {
-		SASocket.sendData(CHANNELID, "GET_WEATHER");
+		SASocket.sendData(CHANNELID, "request");
 		console.log('Fetching weather info...');
 	} catch (err) {
 		console.log("exception [" + err.name + "] msg[" + err.message + "]");

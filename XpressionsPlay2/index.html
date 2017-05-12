@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="description" content="XpressionsPlay2" />
+
+<title>XpressionsSportive</title>
+
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+</head>
+<body>
+
+	<form id="frmTic" NAME="tic" style="width: 100%; height: 100%;"
+		method="post">
+		<input type="text" name="score"
+				style="margin-left: 30%;margin-top:4%; border-radius: 20%;height:8%;font-size:12pt;width:35%" value="Score: G-5 Y-2"
+				readonly> <br />
+		<div style="display: block; margin-left: 15%; margin-top: 0%;width:95%;height:90%"
+			id="dvtictac">
+			 <INPUT TYPE="button"
+				style="border-radius: 50%; border: 1px solid red; width: 25%; height: 25%;color:#000000;font-size: 20pt"
+				NAME="sqr1" value="     "
+				onClick="if(document.tic.sqr1.value == '     ' && turn == 0 && mode == 1) {document.tic.sqr1.value = ' X '; sqr1T = 1; turn = 1; vari(); check();} else if(document.tic.sqr1.value == '     ' && turn == 1 && mode == 2) {document.tic.sqr1.value = ' X '; sqr1T = 1; turn = 0; vari(); player1Check()} else if(document.tic.sqr1.value == '     ' && turn == 0 && mode == 2) {document.tic.sqr1.value = ' O '; sqr1T = 1; turn = 1; vari(); player1Check()} drawCheck()">
+			<INPUT TYPE="button"
+				style="border-radius: 50%; border: 1px solid red; width: 25%; height: 25%;color:#000000;font-size: 20pt"
+				NAME="sqr2" value="     "
+				onClick="if(document.tic.sqr2.value == '     ' && turn == 0 && mode == 1) {document.tic.sqr2.value = ' X '; sqr2T = 1; turn = 1; vari(); check();} else if(document.tic.sqr2.value == '     ' && turn == 1 && mode == 2) {document.tic.sqr2.value = ' X '; sqr2T = 1; turn = 0; vari(); player1Check()} else if(document.tic.sqr2.value == '     ' && turn == 0 && mode == 2) {document.tic.sqr2.value = ' O '; sqr2T = 1; turn = 1; vari(); player1Check()} drawCheck()">
+			<INPUT TYPE="button"
+				style="border-radius: 50%; border: 1px solid red; width: 25%; height: 25%;color:#000000;font-size: 20pt"
+				NAME="sqr3" value="     "
+				onClick="if(document.tic.sqr3.value == '     ' && turn == 0 && mode == 1) {document.tic.sqr3.value = ' X '; sqr3T = 1; turn = 1; vari(); check();} else if(document.tic.sqr3.value == '     ' && turn == 1 && mode == 2) {document.tic.sqr3.value = ' X '; sqr3T = 1; turn = 0; vari(); player1Check()} else if(document.tic.sqr3.value == '     ' && turn == 0 && mode == 2) {document.tic.sqr3.value = ' O '; sqr3T = 1; turn = 1; vari(); player1Check()} drawCheck()"><br />
+			<INPUT TYPE="button"
+				style="border-radius: 50%; border: 1px solid red; width: 25%; height: 25%;color:#000000;font-size: 20pt"
+				NAME="sqr4" value="     "
+				onClick="if(document.tic.sqr4.value == '     ' && turn == 0 && mode == 1) {document.tic.sqr4.value = ' X '; sqr4T = 1; turn = 1; vari(); check();} else if(document.tic.sqr4.value == '     ' && turn == 1 && mode == 2) {document.tic.sqr4.value = ' X '; sqr4T = 1; turn = 0; vari(); player1Check()} else if(document.tic.sqr4.value == '     ' && turn == 0 && mode == 2) {document.tic.sqr4.value = ' O '; sqr4T = 1; turn = 1; vari(); player1Check()} drawCheck()">
+			<INPUT TYPE="button"
+				style="border-radius: 50%; border: 1px solid red; width: 25%; height: 25%;color:#000000;font-size: 20pt"
+				NAME="sqr5" value="     "
+				onClick="if(document.tic.sqr5.value == '     ' && turn == 0 && mode == 1) {document.tic.sqr5.value = ' X '; sqr5T = 1; turn = 1; vari(); check();} else if(document.tic.sqr5.value == '     ' && turn == 1 && mode == 2) {document.tic.sqr5.value = ' X '; sqr5T = 1; turn = 0; vari(); player1Check()} else if(document.tic.sqr5.value == '     ' && turn == 0 && mode == 2) {document.tic.sqr5.value = ' O '; sqr5T = 1; turn = 1; vari(); player1Check()} drawCheck()">
+			<INPUT TYPE="button"
+				style="border-radius: 50%; border: 1px solid red; width: 25%; height: 25%;color:#000000;font-size: 20pt"
+				NAME="sqr6" value="     "
+				onClick="if(document.tic.sqr6.value == '     ' && turn == 0 && mode == 1) {document.tic.sqr6.value = ' X '; sqr6T = 1; turn = 1; vari(); check();} else if(document.tic.sqr6.value == '     ' && turn == 1 && mode == 2) {document.tic.sqr6.value = ' X '; sqr6T = 1; turn = 0; vari(); player1Check()} else if(document.tic.sqr6.value == '     ' && turn == 0 && mode == 2) {document.tic.sqr6.value = ' O '; sqr6T = 1; turn = 1; vari(); player1Check()} drawCheck()"><br />
+			<INPUT TYPE="button"
+				style="border-radius: 50%; border: 1px solid red; width: 25%; height: 25%;color:#000000;font-size: 20pt"
+				NAME="sqr7" value="     "
+				onClick="if(document.tic.sqr7.value == '     ' && turn == 0 && mode == 1) {document.tic.sqr7.value = ' X '; sqr7T = 1; turn = 1; vari(); check();} else if(document.tic.sqr7.value == '     ' && turn == 1 && mode == 2) {document.tic.sqr7.value = ' X '; sqr7T = 1; turn = 0; vari(); player1Check()} else if(document.tic.sqr7.value == '     ' && turn == 0 && mode == 2) {document.tic.sqr7.value = ' O '; sqr7T = 1; turn = 1; vari(); player1Check()} drawCheck()">
+			<INPUT TYPE="button"
+				style="border-radius: 50%; border: 1px solid red; width: 25%; height: 25%;color:#000000;font-size: 20pt"
+				NAME="sqr8" value="     "
+				onClick="if(document.tic.sqr8.value == '     ' && turn == 0 && mode == 1) {document.tic.sqr8.value = ' X '; sqr8T = 1; turn = 1; vari(); check();} else if(document.tic.sqr8.value == '     ' && turn == 1 && mode == 2) {document.tic.sqr8.value = ' X '; sqr8T = 1; turn = 0; vari(); player1Check()} else if(document.tic.sqr8.value == '     ' && turn == 0 && mode == 2) {document.tic.sqr8.value = ' O '; sqr8T = 1; turn = 1; vari(); player1Check()} drawCheck()">
+			<INPUT TYPE="button"
+				style="border-radius: 50%; border: 1px solid red; width: 25%; height: 25%;color:#000000;font-size: 20pt"
+				NAME="sqr9" value="     "
+				onClick="if(document.tic.sqr9.value == '     ' && turn == 0 && mode == 1) {document.tic.sqr9.value = ' X '; sqr9T = 1; turn = 1; vari(); check();} else if(document.tic.sqr9.value == '     ' && turn == 1 && mode == 2) {document.tic.sqr9.value = ' X '; sqr9T = 1; turn = 0; vari(); player1Check()} else if(document.tic.sqr9.value == '     ' && turn == 0 && mode == 2) {document.tic.sqr9.value = ' O '; sqr9T = 1; turn = 1; vari(); player1Check()} drawCheck()">
+			<br /> <INPUT TYPE="button"
+				style="margin-left: 25%;margin-top:1%; width: 30%; height: 15%; border-radius: 20%;color:#000000;font-size: 20pt"
+				value="EXIT">
+		</div>
+		<div style="visibility: visible;display:none" id="box">
+			<img id="imgtransparent"
+				style="position: absolute; top: 20%; left: 0%; width: 50%; height: 70%"
+				onclick="showMenu()" alt="" src="transparent.png">
+
+			<canvas class="canvas"></canvas>
+			<div id="menu" style="visibility: hidden;">
+				<img id="imgTime"
+					style="position: absolute; top: 15%; left: 30%; width: 23%; background-color: #666666; border-radius: 10px;"
+					onclick="toggleTimeFormat()" alt="" src="12_24.png"> <img
+					id="imgTextColor"
+					style="position: absolute; top: 39%; left: 30%; width: 23%; background-color: #666666; border-radius: 8px;"
+					onclick="changeColor()" alt="" src="photon2.png"> <img
+					id="imgBgColor"
+					style="position: absolute; top: 64%; left: 30%; width: 23%; background-color: #aaaaaa; border-radius: 8px;"
+					onclick="changeBGImage()" alt="" src="change_image.png"> <img
+					id="imgPlay"
+					style="position: absolute; top: 15%; left: 55%; width: 20%; background-color: #666666; border-radius: 8px;"
+					onclick="changePlay()" alt="" src="play_menu.png"> <img
+					id="imgTheme"
+					style="position: absolute; top: 64%; left: 55%; width: 23%; background-color: #666666; border-radius: 8px;"
+					onclick="changeTheme()" alt="" src="theme.png">
+
+			</div>
+		</div>
+
+	</form>
+
+
+
+
+
+
+
+
+	<script src="language.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/menu.js"></script>
+	<script src="js/analogdisplay.js"></script>
+	<script src="js/batterydisplay.js"></script>
+	<script src="js/database.js"></script>
+	<script src="js/datedisplay.js"></script>
+	<script src="js/digitaldisplay.js"></script>
+	<script src="js/hostconnectivity.js"></script>
+	<script src="js/stepsdisplay.js"></script>
+	<script src="js/themer.js"></script>
+	<script src="js/cardio.js"></script>
+	<script src="js/gametictac.js"></script>
+
+
+</body>
