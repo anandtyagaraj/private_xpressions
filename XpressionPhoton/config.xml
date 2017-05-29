@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns:tizen="http://tizen.org/ns/widgets" xmlns="http://www.w3.org/ns/widgets" id="http://anandtyagaraj/XpressionPhoton" version="1.3.9" viewmodes="maximized">
+    <tizen:application id="wWvMUM7yrW.XpressionsGearPhoton" package="wWvMUM7yrW" required_version="2.1"/>
+    <author email="anand.tyagaraj@gmail.com">Anand</author>
+    <tizen:category name="com.samsung.wmanager.WATCH_CLOCK"/>
+    <content src="index.html"/>
+    <feature name="http://tizen.org/feature/screen.size.all"/>
+    <icon src="Photon_900.png" height="900" width="900"/>
+    <name>Xpressions Gear Photon</name>
+    <tizen:profile name="wearable"/>
+    <tizen:setting background-support="disable" encryption="disable" hwkey-event="enable"/>
+</widget>

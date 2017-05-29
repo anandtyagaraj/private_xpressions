@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://anandtyagaraj/XpressionHarmony" version="1.4.0" viewmodes="maximized">
+    <tizen:application id="0OXRVYVFe5.XpressionsGearHarmony" package="0OXRVYVFe5" required_version="2.1"/>
+    <author email="anand.tyagaraj@gmail.com">Anand</author>
+    <tizen:category name="com.samsung.wmanager.WATCH_CLOCK"/>
+    <content src="index.html"/>
+    <feature name="http://tizen.org/feature/screen.size.all"/>
+    <icon src="900.png" height="900" width="900"/>
+    <name>Xpressions Gear Harmony</name>
+    <tizen:privilege name="http://developer.samsung.com/privilege/healthinfo"/>
+    <tizen:privilege name="http://developer.samsung.com/privilege/medicalinfo"/>
+    <tizen:setting background-support="disable" encryption="disable" hwkey-event="enable"/>
+</widget>

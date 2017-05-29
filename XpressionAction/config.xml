@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns:tizen="http://tizen.org/ns/widgets" xmlns="http://www.w3.org/ns/widgets" id="http://anandtyagaraj/XpressionAction" version="1.3.6" viewmodes="maximized">
+    <tizen:application id="KWbdUKPHwA.XpressionsGearAction" package="KWbdUKPHwA" required_version="2.1"/>
+    <author email="anand.tyagaraj@gmail.com">Anand</author>
+    <tizen:category name="com.samsung.wmanager.WATCH_CLOCK"/>
+    <content src="index.html"/>
+    <feature name="http://tizen.org/feature/screen.size.all"/>
+    <icon src="XGA.png" height="900" width="900"/>
+    <name>Xpressions Gear Action</name>
+    <tizen:setting background-support="disable" encryption="disable" hwkey-event="enable"/>
+</widget>

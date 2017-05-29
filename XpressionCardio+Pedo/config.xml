@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://anandtyagaraj/XpressionX1" version="1.1.0" viewmodes="maximized">
+    <tizen:application id="El5DRYGK4l.XpressionsGearPedoCardio" package="El5DRYGK4l" required_version="2.1"/>
+    <author email="anand.tyagaraj@gmail.com">Anand</author>
+    <tizen:category name="com.samsung.wmanager.WATCH_CLOCK"/>
+    <content src="index.html"/>
+    <feature name="http://tizen.org/feature/screen.size.all"/>
+    <feature name="http://developer.samsung.com/tizen/feature/pedometer"/>
+    <icon src="300.png" height="117" width="117"/>
+    <name>Xpressions Gear Pedo Cardio</name>
+    <tizen:privilege name="http://tizen.org/privilege/location"/>
+    <tizen:privilege name="http://tizen.org/privilege/healthinfo"/>
+    <tizen:privilege name="http://developer.samsung.com/privilege/healthinfo"/>
+    <tizen:privilege name="http://developer.samsung.com/privilege/medicalinfo"/>
+    <tizen:setting background-support="disable" encryption="disable" hwkey-event="enable"/>
+</widget>

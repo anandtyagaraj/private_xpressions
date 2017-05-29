@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://anandtyagaraj/XpressionRadium" version="1.4.4" viewmodes="maximized">
+    <tizen:application id="CYVymWAfzL.XpressionsGearRadium" package="CYVymWAfzL" required_version="2.1"/>
+    <author email="anand.tyagaraj@gmail.com">Anand</author>
+    <tizen:category name="com.samsung.wmanager.WATCH_CLOCK"/>
+    <content src="index.html"/>
+    <feature name="http://tizen.org/feature/screen.size.all"/>
+    <icon src="XRadium900_900.png" height="900" width="900"/>
+    <name>Xpressions Gear Radium</name>
+    <tizen:profile name="wearable"/>
+    <tizen:setting background-support="disable" encryption="disable" hwkey-event="enable"/>
+</widget>
