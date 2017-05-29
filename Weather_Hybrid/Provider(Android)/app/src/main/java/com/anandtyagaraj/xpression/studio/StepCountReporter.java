@@ -31,6 +31,7 @@ import android.database.Cursor;
 import android.util.Log;
 
 import java.util.Calendar;
+import java.util.TimeZone;
 
 public class StepCountReporter {
     private final HealthDataStore mStore;
@@ -77,8 +78,9 @@ public class StepCountReporter {
     private long getStartTimeOfToday() {
         Calendar today = Calendar.getInstance();
 
-        today.set(Calendar.HOUR_OF_DAY, 0);
-        today.set(Calendar.MINUTE, 0);
+        //today.setTimeZone(TimeZone.getDefault());
+        today.set(Calendar.HOUR_OF_DAY, 5);
+        today.set(Calendar.MINUTE, 30);
         today.set(Calendar.SECOND, 0);
         today.set(Calendar.MILLISECOND, 0);
 
@@ -96,9 +98,9 @@ public class StepCountReporter {
                 c = result.getResultCursor();
                 if (c != null) {
                     while (c.moveToNext()) {
-                        try { count += c.getInt(c.getColumnIndex(HealthConstants.StepCount.COUNT));
-
-                            cal = c.getInt(c.getColumnIndex(HealthConstants.StepCount.CALORIE));
+                        try {
+                            count += c.getInt(c.getColumnIndex(HealthConstants.StepCount.COUNT));
+                            cal += c.getInt(c.getColumnIndex(HealthConstants.StepCount.CALORIE));
                         }
                         catch (Exception e){
                             Log.d("Step",e.toString());

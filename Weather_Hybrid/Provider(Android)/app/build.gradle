@@ -7,8 +7,8 @@ android {
         applicationId "com.anandtyagaraj.xpression.studio"
         minSdkVersion 15
         targetSdkVersion 21
-        versionCode 3
-        versionName '1.1.0'
+        versionCode 5
+        versionName '2.3.0'
     }
     buildTypes {
         release {

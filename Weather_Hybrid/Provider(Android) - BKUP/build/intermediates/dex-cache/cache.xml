@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\E503709\Personal\Weather_Hybrid\Provider(Android) - BKUP\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="C:\E503709\Personal\Weather_Hybrid\Provider(Android) - BKUP\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.1.1_70865327af42d44c14c10fdb3d2b92b07077d897.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\E503709\Personal\Weather_Hybrid\Provider(Android) - BKUP\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="8e673cdfadd8f2d98fdb2fda2285c30f6e449782">
+        <dex dex="C:\E503709\Personal\Weather_Hybrid\Provider(Android) - BKUP\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-8.4.0_35c6be7f330f593a979ee7aeed2dcf66c790d0e4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\E503709\Personal\Weather_Hybrid\Provider(Android) - BKUP\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="65d086ee9daaf87b5af62ad24471edafa433354c">
+        <dex dex="C:\E503709\Personal\Weather_Hybrid\Provider(Android) - BKUP\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-appindexing-8.4.0_d3b8fef5801efbdc62808e6aa3dacb960bdc851b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\e503709\.gradle\caches\modules-2\files-2.1\org.springframework.android\spring-android-rest-template\2.0.0.M3\204c594c2a47073b30d3cb14ca69ba1066c4e44c\spring-android-rest-template-2.0.0.M3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="204c594c2a47073b30d3cb14ca69ba1066c4e44c">
+        <dex dex="C:\E503709\Personal\Weather_Hybrid\Provider(Android) - BKUP\app\build\intermediates\pre-dexed\debug\spring-android-rest-template-2.0.0.M3_555445155ab514ca370a0e8ff279b3ce77374c43.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\E503709\Personal\Weather_Hybrid\Provider(Android) - BKUP\app\libs\sdk-v1.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="e2ce3786b6e9519934c4a54aaaaf39525bf4486c">
+        <dex dex="C:\E503709\Personal\Weather_Hybrid\Provider(Android) - BKUP\app\build\intermediates\pre-dexed\debug\sdk-v1.0.0_dcdfd32eeef2a507ffebd2db6f8c271ca1cd65ec.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\E503709\Personal\Weather_Hybrid\Provider(Android) - BKUP\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="04de44f90606c77f3b28cf44861f306290505aac">
+        <dex dex="C:\E503709\Personal\Weather_Hybrid\Provider(Android) - BKUP\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-maps-8.4.0_bced81ef2186797470b7c0f82c47e9b3ec385346.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\E503709\Personal\Weather_Hybrid\Provider(Android) - BKUP\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="a8412b654dab86d57bf90683367488211c8a81f1">
+        <dex dex="C:\E503709\Personal\Weather_Hybrid\Provider(Android) - BKUP\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-location-8.4.0_aa50b7f4aaaa6c4e29f49e0ca6452379441d1663.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\e503709\.gradle\caches\modules-2\files-2.1\org.springframework.android\spring-android-core\2.0.0.M3\c7e2c60943248bbce5de6cf552592281ed2296b\spring-android-core-2.0.0.M3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="0c7e2c60943248bbce5de6cf552592281ed2296b">
+        <dex dex="C:\E503709\Personal\Weather_Hybrid\Provider(Android) - BKUP\app\build\intermediates\pre-dexed\debug\spring-android-core-2.0.0.M3_79da835e5b64f967344599731255adce8dfba051.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\E503709\Personal\Weather_Hybrid\Provider(Android) - BKUP\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="C:\E503709\Personal\Weather_Hybrid\Provider(Android) - BKUP\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.1.1_805ed2ff1254dc4670a163a22fc764d93eea0746.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\e503709\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="C:\E503709\Personal\Weather_Hybrid\Provider(Android) - BKUP\app\build\intermediates\pre-dexed\debug\support-annotations-23.1.1_a51d30808d894aa6789fc5975f6d3024a114709b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\E503709\Personal\Weather_Hybrid\Provider(Android) - BKUP\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="C:\E503709\Personal\Weather_Hybrid\Provider(Android) - BKUP\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.1_a88cc9219a585ffcb919482ba392c8a1a1ad5f99.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\E503709\Personal\Weather_Hybrid\Provider(Android) - BKUP\app\libs\accessory-v2.5.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="ad070307f860377f31726b89bb2d6871328e7004">
+        <dex dex="C:\E503709\Personal\Weather_Hybrid\Provider(Android) - BKUP\app\build\intermediates\pre-dexed\debug\accessory-v2.5.0_9f712d690c8d7424ad343f49c6e868176ab00d80.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\E503709\Personal\Weather_Hybrid\Provider(Android) - BKUP\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\8.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
+        <dex dex="C:\E503709\Personal\Weather_Hybrid\Provider(Android) - BKUP\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-8.4.0_aca883b4d586d2ee94abb54ad4cb4c23ed7d1dba.jar" />
+    </item>
+
+</items>
